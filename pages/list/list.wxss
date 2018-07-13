@@ -57,3 +57,9 @@ input {
 .shop-addr {
 	
 }
+.load {
+	height: 80rpx;
+	line-height: 80rpx;
+	text-align: center;
+	font-size: 28rpx;
+}

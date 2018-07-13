@@ -9,7 +9,22 @@ Page({
    */
   data: {
     categories: {},
-    shops: []
+    shops: [],
+    pageIndex: 0,
+    pageSize: 10,
+    hasMore: true
+  },
+
+  loadMore () {
+    if (!this.data.hasMore) return
+    let { pageIndex, pageSize } = this.data
+    fetch(`categories/${this.data.categories.id}/shops`, {_page: ++pageIndex, _limit: pageSize}).then(res=>{
+      // console.log(res.header)
+      let total = parseInt(res.header['X-Total-Count'])
+      let hasMore = total > pageIndex * pageSize
+      let shops = this.data.shops.concat(res.data)
+      this.setData({ shops, pageIndex, hasMore })
+    })
   },
 
   /**
@@ -25,13 +40,8 @@ Page({
       })
 
       // 加载分类信息之类再请求商铺信息
-      return fetch(`categories/${options.cat}/shops`, {_page: 1, _limit: 10})
-
-    }).then(res=>{
-      // console.log(res.data)
-      this.setData({shops: res.data})
+      this.loadMore()
     })
-    
   },
 
   /**
@@ -77,7 +87,8 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    // console.log(1)
+    // console.log(11111)
+    this.loadMore()
   },
 
   /**

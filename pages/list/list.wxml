@@ -17,3 +17,5 @@
 		<view class="score">{{item.score ? item.score : 0}}</view>
 	</view>
 </view>
+<view wx:if="{{hasMore}}" class="load load-more">加载中……</view>
+<view wx:else class="load-more" class="load nomore">没有更多数据了</view>
