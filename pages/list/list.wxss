@@ -1,0 +1,59 @@
+/* pages/list/list.wxss */
+.search-wrap {
+	background: #fff;
+	padding: 16rpx;
+}
+.search {
+	border: 1px solid #eee;
+	border-radius: 16rpx;
+	padding: 0 16rpx;
+	display: flex;
+}
+input {
+	flex: 1;
+	font-size:28rpx;
+	height: 80rpx;
+	line-height: 80rpx;
+}
+.search-icon {
+	height: 80rpx;
+	line-height: 80rpx;
+	font-size: 40rpx;
+}
+.lists {
+	background: #fff;
+	margin: 8rpx 0;
+}
+.list-item {
+	display: flex;
+	border-bottom: 1px solid #eee;
+	padding:16rpx;
+	font-size:24rpx;
+}
+.list-item image {
+	width: 136rpx;
+	height: 136rpx;
+	margin-right: 16rpx; 
+}
+.list-item .text {
+	display: flex;
+	flex-direction: column;
+	flex:1;
+	line-height: 36rpx; 
+}
+.list-item .score {
+	background: #ff7300;
+	border-radius: 8rpx;
+	height: 30rpx;
+	line-height: 30rpx;
+	padding: 4rpx 12rpx;
+	color: #fff;
+	width: 40rpx;
+	text-align: center;
+}
+.shop-name {
+	font-weight:bold;
+}
+.shop-addr {
+	
+}

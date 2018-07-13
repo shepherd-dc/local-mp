@@ -1,0 +1,19 @@
+<!--pages/list/list.wxml-->
+<view class="search-wrap">
+	<view class="search">
+		<input placeholder="搜索"/>
+		<icon type="search" size="15" class="search-icon"></icon>
+	</view>
+</view>
+<view class="lists">
+	<view class="list-item" wx:for="{{shops}}" wx:key="id">
+		<image src="{{item.images[0]}}" mode="aspectFill"></image>
+		<view class="text">
+			<text class="shop-name">{{item.name}}</text>
+			<text class="shop-phone">电话：{{item.phone ? item.phone : '暂无'}}</text>
+			<text class="shop-addr">地址：{{item.address}}</text>
+			<text class="shop-time">营业时间：{{item.businessHours}}</text>
+		</view>
+		<view class="score">{{item.score ? item.score : 0}}</view>
+	</view>
+</view>

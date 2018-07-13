@@ -1,0 +1,24 @@
+<!--pages/index/index.wxml-->
+<swiper class="sliders" indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+	<swiper-item wx:for="{{slides}}" wx:key="id">
+		<navigator wx:if="{{item.link}}" url="{{item.link}}">
+			<image src="{{item.image}}" mode="aspectFill"></image>
+		</navigator>
+		<image wx:else src="{{item.image}}" mode="aspectFill"></image>
+	</swiper-item>
+</swiper>
+<view class="grids">
+	<navigator class="item" wx:for="{{categories}}" wx:key="id" url="/pages/list/list?cat={{item.id}}">
+		<image src="{{item.icon}}" />
+		<text>{{item.name}}</text>
+	</navigator>
+</view>
+<view class="link">
+	<view class="link-item recommend">
+		<text>商家推荐</text>
+	</view>
+	<view class="link-item discuz">
+		<text>交流论坛</text>
+	</view>
+</view>
