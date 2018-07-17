@@ -1,1 +1,7 @@
 /* pages/message/message.wxss */
+.wxParse-html {
+    padding-left: 16rpx;
+    padding-right: 16rpx;
+    font-size: 24rpx;
+    line-height: 36rpx;
+}
