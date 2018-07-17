@@ -1,6 +1,4 @@
-// pages/message/message.js
-// var WxParse = require('../../wxParse/wxParse/wxParse.js')
-
+// pages/detail/detail.js
 Page({
 
   /**
@@ -14,15 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // var that = this
-    // wx.request({
-    //   url: "https://www.kanyanbao.com/newsadapter/cjnews/read_news.json?id= 1790189",
-    //   success: (res) => {
-    //     console.log(res.data.news.body_html)
-    //     var article = res.data.news.body_html
-    //     WxParse.wxParse('article', 'html', article, that,5);
-    //   }
-    // })
+  
   },
 
   /**

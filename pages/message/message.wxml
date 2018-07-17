@@ -1,3 +1,4 @@
 <!--pages/message/message.wxml-->
-<import src="../../wxParse/wxParse/wxParse.wxml"/>
-<template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+<!--<import src="../../wxParse/wxParse/wxParse.wxml"/>
+<template is="wxParse" data="{{wxParseData:article.nodes}}"/>-->
+<text>message</text>

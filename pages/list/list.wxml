@@ -6,7 +6,7 @@
 	</view>
 </view>
 <view class="lists">
-	<view class="list-item" wx:for="{{shops}}" wx:key="id">
+	<navigator class="list-item" wx:for="{{shops}}" wx:key="id" url="/pages/detail/detail?={{item.id}}">
 		<image src="{{item.images[0]}}" mode="aspectFill"></image>
 		<view class="text">
 			<text class="shop-name">{{item.name}}</text>
@@ -15,7 +15,7 @@
 			<text class="shop-time">营业时间：{{item.businessHours}}</text>
 		</view>
 		<view class="score">{{item.score ? item.score : 0}}</view>
-	</view>
+	</navigator>
 </view>
 <view wx:if="{{hasMore}}" class="load load-more">加载中……</view>
 <view wx:else class="load-more" class="load nomore">没有更多数据了</view>

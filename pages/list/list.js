@@ -18,7 +18,7 @@ Page({
   loadMore () {
     if (!this.data.hasMore) return
     let { pageIndex, pageSize } = this.data
-    fetch(`categories/${this.data.categories.id}/shops`, {_page: ++pageIndex, _limit: pageSize}).then(res=>{
+    return fetch(`categories/${this.data.categories.id}/shops`, {_page: ++pageIndex, _limit: pageSize}).then(res=>{
       // console.log(res.header)
       let total = parseInt(res.header['X-Total-Count'])
       let hasMore = total > pageIndex * pageSize
@@ -80,14 +80,16 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+    this.setData({shops: [], pageIndex: 0, hasMore: true})
+    this.loadMore().then(()=>{
+      wx.stopPullDownRefresh()
+    })
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    // console.log(11111)
     this.loadMore()
   },
 
