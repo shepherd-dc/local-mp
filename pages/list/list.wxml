@@ -6,7 +6,7 @@
 	</view>
 </view>
 <view class="lists">
-	<navigator class="list-item" wx:for="{{shops}}" wx:key="id" url="/pages/detail/detail?={{item.id}}">
+	<navigator class="list-item" wx:for="{{shops}}" wx:key="id" url="/pages/detail/detail?item={{item.id}}">
 		<image src="{{item.images[0]}}" mode="aspectFill"></image>
 		<view class="text">
 			<text class="shop-name">{{item.name}}</text>

@@ -1,18 +1,33 @@
 // pages/detail/detail.js
+
+const fetch = require('../../utils/fetch')
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    shop: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    fetch(`shops/${options.item}`)
+      .then(res => {
+        // console.log(res.data)
+        this.setData({ shop: res.data })
+        wx.setNavigationBarTitle({ title: res.data.name })
+      })
+  },
+
+  previewHandle (e) {
+    wx.previewImage({
+      current: e.target.dataset.src,
+      urls: this.data.shop.images
+    })
   },
 
   /**
@@ -60,7 +75,14 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-  
+  onShareAppMessage: function (res) {
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return {
+      title: this.data.shop.name,
+      path: `/pages/detail/detail?item=${this.data.shop.id}`
+    }
   }
 })
